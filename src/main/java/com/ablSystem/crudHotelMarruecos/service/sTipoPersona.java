@@ -2,7 +2,7 @@
 package com.ablSystem.crudHotelMarruecos.service;
 
 import com.ablSystem.crudHotelMarruecos.interfaceService.iSTipoPersona;
-import com.ablSystem.crudHotelMarruecos.model.mPersona;
+import com.ablSystem.crudHotelMarruecos.model.mCliente;
 import com.ablSystem.crudHotelMarruecos.model.mTipoPersona;
 import com.ablSystem.crudHotelMarruecos.view.vTipoPersona;
 import java.util.List;
@@ -30,7 +30,7 @@ public class sTipoPersona implements iSTipoPersona{
     public int saveTP(mTipoPersona mTP) {
         int res=0;
         mTipoPersona mTipoPerson=vTP.save(mTP);
-        if(!mTipoPerson.equals(null)){
+        if(mTipoPerson != null){
             res=1;
         }
         return res;
@@ -42,6 +42,4 @@ public class sTipoPersona implements iSTipoPersona{
     }
 
    
-    
-    
 }

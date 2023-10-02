@@ -25,13 +25,13 @@ public class controladorTP {
     public String listarTP(Model model) {
         List<mTipoPersona> mTipoPersonas = service.listarTP();
         model.addAttribute("mTipoPersonas", mTipoPersonas);
-        return "indexTP";
+        return "tipoPersona";
     }
     
     @GetMapping("/newTP")
     public String agregarTP(Model model) {
         model.addAttribute("mTipoPersona", new mTipoPersona());
-        return "ingresarTP";
+        return "crear-tipoPersona";
     }
     
     @PostMapping("/saveTP")
@@ -44,7 +44,7 @@ public class controladorTP {
     public String editarTP(@PathVariable int id, Model model) {
         Optional<mTipoPersona> mTipoPersonas = service.listarIdTP(id);
         model.addAttribute("mTipoPersona", mTipoPersonas);
-        return "ingresarTP";
+        return "crear-tipoPersona";
     }
     
     

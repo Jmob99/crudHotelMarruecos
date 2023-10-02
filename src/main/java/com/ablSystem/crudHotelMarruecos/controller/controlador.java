@@ -1,7 +1,6 @@
 package com.ablSystem.crudHotelMarruecos.controller;
 
-import com.ablSystem.crudHotelMarruecos.interfaceService.iSPersona;
-import com.ablSystem.crudHotelMarruecos.model.mPersona;
+import com.ablSystem.crudHotelMarruecos.model.mCliente;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import com.ablSystem.crudHotelMarruecos.interfaceService.iSCliente;
 
 
 @Controller
@@ -19,32 +19,33 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class controlador {
 
     @Autowired
-    private iSPersona service;
+    private iSCliente service;
     
     @GetMapping("/listar")
     public String listar(Model model) {
-        List<mPersona> mPersonas = service.listar();
-        model.addAttribute("mPersonas", mPersonas);
-        return "indexP";
+        List<mCliente> mClientes = service.listar();
+        model.addAttribute("mClientes", mClientes);
+        return "cliente";
     }
+    
     
     @GetMapping("/new")
     public String agregar(Model model) {
-        model.addAttribute("mPersona", new mPersona());
-        return "ingresar";
+        model.addAttribute("mCliente", new mCliente());
+        return "crear-cliente";
     }
     
     @PostMapping("/save")
-    public String save(mPersona mP, Model model) {
-        service.save(mP);
+    public String save(mCliente mC, Model model) {
+        service.save(mC);
         return "redirect:/listar";
     }
     
     @GetMapping("/editar/{id}")
     public String editar(@PathVariable int id, Model model) {
-        Optional<mPersona> mPersonas = service.listarId(id);
-        model.addAttribute("mPersona", mPersonas);
-        return "ingresar";
+        Optional<mCliente> mClientes = service.listarId(id);
+        model.addAttribute("mCliente", mClientes);
+        return "crear-cliente";
     }
     
     @GetMapping("/eliminar/{id}")
@@ -52,4 +53,6 @@ public class controlador {
         service.delete(id);
         return "redirect:/listar";
     }
+
+    
 }

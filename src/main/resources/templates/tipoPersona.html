@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Tipo de Persona</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+       
+        
+        <div class="container mt-4">
+            <div class="form-group mt-4 mb-4">
+                <label>Crear nuevo cliente</label>
+                <a th:href="@{/newTP}" class="btn btn-primary form-control">Crear</a>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOMBRE</th>
+                        <th>OPCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="tipopersona:${mTipoPersonas}">
+                        <td th:text="${tipopersona.id_tipo_documento}"></td>
+                        <td th:text="${tipopersona.nom_tipo_documento}"></td>
+                        <td>
+                            <a th:href="@{/editarTP/}+${tipopersona.id_tipo_documento}" class="btn btn-warning">Editar</a>
+                            <a th:href="@{/eliminarTP/}+${tipopersona.id_tipo_documento}" class="btn btn-danger">Eliminar</a>
+                                
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

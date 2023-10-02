@@ -9,37 +9,38 @@ import jakarta.persistence.Table;
 
 //ANOTACIONES
 @Entity
-@Table(name="tTipoPersona")
+@Table(name="tipo_documento")
 public class mTipoPersona {
     //ANOTACIONES
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int id;
-    private String name;
-    
+    private int id_tipo_documento;
+    private String nom_tipo_documento;
+
     public mTipoPersona() {
     }
 
-    public mTipoPersona(int id, String name) {
-        this.id = id;
-        this.name = name;
+    public mTipoPersona(int id_tipo_documento, String nom_tipo_documento) {
+        this.id_tipo_documento = id_tipo_documento;
+        this.nom_tipo_documento = nom_tipo_documento;
     }
 
-    public int getId() {
-        return id;
+    public int getId_tipo_documento() {
+        return id_tipo_documento;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId_tipo_documento(int id_tipo_documento) {
+        this.id_tipo_documento = id_tipo_documento;
     }
 
-    public String getName() {
-        return name;
+    public String getNom_tipo_documento() {
+        return nom_tipo_documento;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNom_tipo_documento(String nom_tipo_documento) {
+        this.nom_tipo_documento = nom_tipo_documento;
     }
+    
     
         
     

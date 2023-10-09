@@ -21,6 +21,8 @@ public class controlador {
     @Autowired
     private iSCliente service;
     
+    
+    
     @GetMapping("/listar")
     public String listar(Model model) {
         List<mCliente> mClientes = service.listar();

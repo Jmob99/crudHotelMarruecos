@@ -10,27 +10,25 @@
             rel="stylesheet"
             />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="../static/styles.css" />
+        <link rel="stylesheet" th:href="@{/styles.css}" />
     </head>
     <body>
-        <a href="inicio.html" class="d-flex justify-content-end">
-            <img src="../static/image/logo-hm.png" alt="" class="logo img-fluid" />
-        </a>
-        <header class="container-tituloRegistroEmpleado container d-flex justify-content-center align-items-center mt-4 mb-2">
+        <div class="d-flex justify-content-end">
+            <img th:src="@{/image/logo-hm.png}" alt="" class="logo img-fluid" />
+        </div>
+        <header class="container d-flex justify-content-center align-items-center mt-2 mb-2">
 
-            <h1 class="titulo-registroEmpleado">Crear Cliente</h1>
+            <h1 class="titulo-registroEmpleado">Lista de Clientes</h1>
         </header>
         <div class="container mt-4">
-            <div class="mt-4 mb-4 text-left">
-                <label class="d-inline-block">Crear nuevo cliente</label>
+            <div class="mt-4 mb-4 text-left d-flex flex-column align-items-start">
+                <label class="d-inline-block titulo-cliente">Crear Cliente</label>
                 <div class="d-inline-block">
                     <a th:href="@{/new}" class="btn btn-primary btn-sm">Crear</a>
                 </div>
             </div>
-
-
-            <div class="table-responsive mt-4">
-                <table class="table table-striped table-bordered">
+            <div class=" table-responsive mt-4">
+                <table class="table table-striped table-bordered tabla-clientes">
                     <thead class="thead-dark text-center">
                         <tr>
                             <th class="align-middle">TIPO DOCUMENTO</th>

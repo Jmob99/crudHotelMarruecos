@@ -21,6 +21,8 @@ public class controladorTP {
     @Autowired
     private iSTipoPersona service;
     
+    
+    
     @GetMapping("/listarTP")
     public String listarTP(Model model) {
         List<mTipoPersona> mTipoPersonas = service.listarTP();

@@ -4,14 +4,12 @@ body{
     background-color: rgb(255, 228, 153);
 }
 
-
 .logo {
-    margin-right: 5rem;
-    margin-top: 5rem;
+    margin-right: 3rem;
+    margin-top: 3rem;
     max-height: 120px;
     
 }
-
 
 .parrafo-title{
     font-size: large;
@@ -19,5 +17,27 @@ body{
     color: black;
     font-weight: bold;
     font-family: 'Fira Sans', sans-serif;
-    margin-left: 8rem;
+   
+}
+
+
+.titulo-registroEmpleado{
+    border-bottom: 3px solid orange;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 45px;
+    padding: 6px;
+    
+}
+
+.tabla-clientes {
+   background-color: whitesmoke;
+}
+
+.titulo-cliente{
+    font-family: 'Fira Sans', sans-serif;
+    font-size: small;
+    font-family: cursive;
+    color: black;
+    font-weight: bold;
+    text-decoration: underline;
 }

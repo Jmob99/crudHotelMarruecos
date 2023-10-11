@@ -12,15 +12,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.ablSystem.crudHotelMarruecos.interfaceService.iSCliente;
+import com.ablSystem.crudHotelMarruecos.interfaceService.iSTipoPersona;
+import com.ablSystem.crudHotelMarruecos.model.mTipoPersona;
 
 
 @Controller
 @RequestMapping
-public class controlador {
+public class controladorCliente {
 
     @Autowired
     private iSCliente service;
     
+    @Autowired
+    private iSTipoPersona services;
     
     
     @GetMapping("/listar")
@@ -34,6 +38,8 @@ public class controlador {
     @GetMapping("/new")
     public String agregar(Model model) {
         model.addAttribute("mCliente", new mCliente());
+        List<mTipoPersona> mTipoPersonas = services.listarTP();
+        model.addAttribute("mTipoPersonas", mTipoPersonas);
         return "crear-cliente";
     }
     
@@ -47,6 +53,8 @@ public class controlador {
     public String editar(@PathVariable int id, Model model) {
         Optional<mCliente> mClientes = service.listarId(id);
         model.addAttribute("mCliente", mClientes);
+        List<mTipoPersona> mTipoPersonas = services.listarTP();
+        model.addAttribute("mTipoPersonas", mTipoPersonas);
         return "crear-cliente";
     }
     

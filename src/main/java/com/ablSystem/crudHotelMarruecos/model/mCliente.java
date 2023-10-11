@@ -1,10 +1,13 @@
 
 package com.ablSystem.crudHotelMarruecos.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 //ANOTACIONES
@@ -15,26 +18,30 @@ public class mCliente {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id_cliente;
-    private int id_tipo_documento;
+    @Column()
     private long numero_documento;
     private String nombre;
     private String apellido;
     private long telefono;
     private String direccion;
     private String correo_electronico;
+    
+    @ManyToOne
+    @JoinColumn(name="id_tipo_documento")
+    private mTipoPersona mtipopersona;
 
     public mCliente() {
     }
 
-    public mCliente(int id_cliente, int id_tipo_documento, long numero_documento, String nombre, String apellido, long telefono, String direccion, String correo_electronico) {
+    public mCliente(int id_cliente, long numero_documento, String nombre, String apellido, long telefono, String direccion, String correo_electronico, mTipoPersona mtipopersona) {
         this.id_cliente = id_cliente;
-        this.id_tipo_documento = id_tipo_documento;
         this.numero_documento = numero_documento;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
         this.direccion = direccion;
         this.correo_electronico = correo_electronico;
+        this.mtipopersona = mtipopersona;
     }
 
     public int getId_cliente() {
@@ -43,14 +50,6 @@ public class mCliente {
 
     public void setId_cliente(int id_cliente) {
         this.id_cliente = id_cliente;
-    }
-
-    public int getId_tipo_documento() {
-        return id_tipo_documento;
-    }
-
-    public void setId_tipo_documento(int id_tipo_documento) {
-        this.id_tipo_documento = id_tipo_documento;
     }
 
     public long getNumero_documento() {
@@ -100,6 +99,16 @@ public class mCliente {
     public void setCorreo_electronico(String correo_electronico) {
         this.correo_electronico = correo_electronico;
     }
+
+    public mTipoPersona getMtipopersona() {
+        return mtipopersona;
+    }
+
+    public void setMtipopersona(mTipoPersona mtipopersona) {
+        this.mtipopersona = mtipopersona;
+    }
+
+    
     
 
     

@@ -2,42 +2,42 @@
 
 <html>
     <head>
-        <title>Panel de control</title>
+        <title>Inicio</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" th:href="@{/styles.css}" />
     </head>
     <body>
+
         <nav class="navbar navbar-dark bg-dark">
             <a class="navbar-brand" href="#">Hotel Marruecos</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Inicio</a>
                     </li>
-                   
+
                 </ul>
             </div>
         </nav>
-        <a href="inicio.html" class="d-flex justify-content-end">
-            <img src="../static/image/logo-hm.png" alt="" class="logo img-fluid" />
-        </a>
-        <header class="container-tituloRegistroEmpleado container d-flex justify-content-center align-items-center mt-4 mb-2">
+
+        <div class="d-flex justify-content-end">
+            <img  th:src="@{/image/logo-hm.png}"alt="" class="logo img-fluid" />
+        </div>
+        <header class="container d-flex justify-content-center align-items-center mt-2 mb-2">
 
             <h1 class="titulo-registroEmpleado">Inicio</h1>
         </header>
         <div class="container text-center">
             <div class="p-2 mb-4">
-                <a th:href="@{/listar}" class="btn btn-primary btn-block">Persona</a>    
+                <a th:href="@{/listar}" class="btn btn-outline-info btn-block">Persona</a>    
             </div>
             <div class="p-2 mb-4">
-                <a th:href="@{/listarTP}" class="btn btn-primary btn-block">Tipo de Persona</a>
+                <a th:href="@{/listarTP}" class="btn btn-outline-info btn-block">Tipo de Persona</a>
             </div>
             <div class="p-2 mb-4">
-                <a th:href="@{/listarTH}" class="btn btn-primary btn-block">Tipo de Habitacion</a>
+                <a th:href="@{/listarTH}" class="btn btn-outline-info btn-block">Tipo de Habitacion</a>
             </div>
 
         </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 07-10-2023 a las 22:59:06
+-- Tiempo de generación: 12-10-2023 a las 16:39:37
 -- Versión del servidor: 5.7.36
 -- Versión de PHP: 7.4.26
 
@@ -39,16 +39,16 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `apellido` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_cliente`),
   KEY `id_tipo_documento` (`id_tipo_documento`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `cliente`
 --
 
 INSERT INTO `cliente` (`id_cliente`, `id_tipo_documento`, `numero_documento`, `telefono`, `direccion`, `correo_electronico`, `nombre`, `apellido`) VALUES
-(1, 1, 12345, 3100256595, 'cra 35 b # 15 - 85', 'jose@hotmail.com', 'jose miguel', 'ordoñez'),
-(8, 1, 51465165, 6484864, 'cra 15 ', 'jonathan@gmail.com', 'jonathan', 'vahos'),
-(4, 2, 151515, 12345, 'cra 25 # 10 - 12', 'sara@hotmail.es', 'sara lomito', 'castaño giraldo');
+(1, 1, 123345, 25165, 'kr 25', 'sara@hotmail.es', 'Sara', 'Castaño'),
+(2, 3, 15165, 121, 'cl 2 ', 'mike@outlook.com', 'mike', 'myers'),
+(3, 2, 165486, 2213156, 'Clle 10 50', 'pedro@hotmail.com', 'Pedro', 'Castro');
 
 -- --------------------------------------------------------
 
@@ -163,7 +163,8 @@ CREATE TABLE IF NOT EXISTS `tipo_documento` (
 
 INSERT INTO `tipo_documento` (`id_tipo_documento`, `nom_tipo_documento`) VALUES
 (1, 'Cedula Ciudadania'),
-(3, 'Pasaporte');
+(2, 'Pasaporte'),
+(3, 'Cedula Extranjeria');
 
 -- --------------------------------------------------------
 
@@ -174,9 +175,18 @@ INSERT INTO `tipo_documento` (`id_tipo_documento`, `nom_tipo_documento`) VALUES
 DROP TABLE IF EXISTS `tipo_habitacion`;
 CREATE TABLE IF NOT EXISTS `tipo_habitacion` (
   `id_tipo_habitacion` int(11) NOT NULL AUTO_INCREMENT,
-  `nom_tipo_habitacion` varchar(30) NOT NULL,
+  `nom_tipo_habitacion` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_tipo_habitacion`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `tipo_habitacion`
+--
+
+INSERT INTO `tipo_habitacion` (`id_tipo_habitacion`, `nom_tipo_habitacion`) VALUES
+(1, 'Habitación doble'),
+(2, 'Habitación sencilla - 1 persona'),
+(4, 'Cabañas');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

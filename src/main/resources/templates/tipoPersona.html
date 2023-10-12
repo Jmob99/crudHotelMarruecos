@@ -13,17 +13,17 @@
         <link rel="stylesheet" th:href="@{/styles.css}" />
     </head>
     <body>
-         <nav class="navbar navbar-dark bg-dark">
+        <nav class="navbar navbar-dark bg-dark">
             <a class="navbar-brand" href="/">Hotel Marruecos</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                         <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="/">Inicio</a>
                     </li>
                 </ul>
             </div>
         </nav>
-       <div class= "d-flex justify-content-end">
+        <div class= "d-flex justify-content-end">
             <img th:src="@{/image/logo-hm.png}" alt="" class="logo img-fluid" />
         </div>
         <header class="container d-flex justify-content-center align-items-center mt-2 mb-2">
@@ -38,30 +38,30 @@
                     <a th:href="@{/newTP}" class="btn btn-primary btn-sm">Crear</a>
                 </div>
             </div>
-            
+
             <div class="table-responsive mt-4 ">
                 <table class="table table-striped table-bordered tabla-clientes">
                     <thead class="thead-dark text-center">
-                    <tr>
-                        <th class="align-middle">ID</th>
-                        <th class="align-middle">NOMBRE</th>
-                        <th class="align-middle">OPCIONES</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="tipopersona:${mTipoPersonas}">
-                        <td th:text="${tipopersona.id_tipo_documento}" class="text-center"></td>
-                        <td th:text="${tipopersona.nom_tipo_documento}" class="text-center"></td>
-                        <td class="align-middle">
-                            <a th:href="@{/editarTP/}+${tipopersona.id_tipo_documento}" class="btn btn-warning btn-sm mr-2 text-center">Editar</a>
-                            <a th:href="@{/eliminarTP/}+${tipopersona.id_tipo_documento}" class="btn btn-danger btn-sm ml-2 text-center">Eliminar</a>
+                        <tr>
+                            <th class="align-middle">ID</th>
+                            <th class="align-middle">NOMBRE</th>
+                            <th class="align-middle">OPCIONES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="tipopersona:${mTipoPersonas}">
+                            <td th:text="${tipopersona.id_tipo_documento}" class="text-center"></td>
+                            <td th:text="${tipopersona.nom_tipo_documento}" class="text-center"></td>
+                            <td class="align-middle text-center">
+                                <a th:href="@{/editarTP/}+${tipopersona.id_tipo_documento}" class="btn btn-warning btn-sm mr-2 text-center">Editar</a>
+                                <a th:href="@{/eliminarTP/}+${tipopersona.id_tipo_documento}" class="btn btn-danger btn-sm ml-2 text-center">Eliminar</a>
 
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            
+
         </div>
     </body>
 </html>

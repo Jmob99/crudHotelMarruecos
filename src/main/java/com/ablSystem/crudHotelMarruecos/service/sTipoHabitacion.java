@@ -25,13 +25,8 @@ public class sTipoHabitacion implements iSTipoHabitacion{
     public Optional<mTipoHabitacion> listarIdTH(int id) {
         return vTH.findById(id);
     }
-
-    @Override
-    public void deleteTH(int id) {
-        vTH.deleteById(id);
-    }
-
-    @Override
+    
+      @Override
     public int saveTH(mTipoHabitacion mTH) {
          int res=0;
         mTipoHabitacion mTipoHabitacio=vTH.save(mTH);
@@ -41,6 +36,18 @@ public class sTipoHabitacion implements iSTipoHabitacion{
         return res;
         
     }
+
+    @Override
+    public void deleteTH(int id) {
+        vTH.deleteById(id);
+    }
+
+    @Override
+    public mTipoHabitacion findByIdTH(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+  
 
 
 }

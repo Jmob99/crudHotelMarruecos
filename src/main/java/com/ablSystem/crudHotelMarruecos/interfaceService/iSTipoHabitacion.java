@@ -13,4 +13,6 @@ public interface iSTipoHabitacion {
     public int saveTH(mTipoHabitacion mTH);
     
     public void deleteTH(int id);
+
+    public mTipoHabitacion findByIdTH(int id);
 }
